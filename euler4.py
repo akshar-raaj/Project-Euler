@@ -1,14 +1,10 @@
 #!/usr/bin/python
-#filename euler4.py
 
 def isPalindrome(number):
     stringRepresentationOfNumber=str(number)
-    #print stringRepresentationOfNumber
-    length=len(stringRepresentationOfNumber)
-    for i in range(0,length/2):
-        if(stringRepresentationOfNumber[i]!=stringRepresentationOfNumber[length-1-i]):
-            return False
-    return True
+    if stringRepresentationOfNumber == stringRepresentationOfNumber[::-1]:
+        return True
+    return False
 
 def findHighestPalindrome():
     highestPalindrome=1
