@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #filename euler2.py
-def generateFibonacciUptoThis(maxValue):
+def sum_fibonacci_upto_this(maxValue):
     firstTerm=1
     secondTerm=2
     nextTerm=0
@@ -15,5 +15,6 @@ def generateFibonacciUptoThis(maxValue):
         secondTerm=nextTerm
     print ("Sum is {0}".format(sum))
     
-generateFibonacciUptoThis(4000000)       
+if __name__=="__main__":
+    sum_fibonacci_upto_this(4000000)       
     
