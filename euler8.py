@@ -8,3 +8,17 @@ while(i<=995):
         highest=product
     i=i+1
 print ("Greatest product of five consecutive digits in the 1000-digit number is {0}".format(highest))
+
+#alternate version
+def multiply(num):
+    product = 1
+    for el in num:
+        product *= int(el)
+    return product
+
+numbers = []
+for i in range(0, 996):
+    numbers.append(string_number[i:i+5])
+
+multiples = [multiply(el) for el in numbers]
+print max(multiples)
