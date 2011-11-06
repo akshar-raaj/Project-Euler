@@ -29,4 +29,5 @@ while(start_number<=1000000):
         number_with_highest_chain_length=key_list_current[0]
     start_number+=1
 print "The starting number under 1 million that produces the longest chain is "+str(number_with_highest_chain_length)
+
     
