@@ -10,7 +10,6 @@ def is_sum_thousand(a,b,c):
     return False
 
 def find_required_pythagorean_triplet():
-    requiredNumber=0
     for a in range(1,1000):
         for b in range(a+1,1000):
             c=1000-(a+b)
