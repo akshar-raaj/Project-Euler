@@ -2,21 +2,12 @@
 
 
 def sum_of_squares(number):
-    """sum=0
-    for i in range(1,number+1):
-        square=i**2
-        sum=sum+square
-    return sum"""
-    l = [i * i for i in range(1, number + 1)]
+    l = (i * i for i in xrange(1, number + 1))
     return sum(l)
 
 
 def square_of_sum(number):
-    """sum=0
-    for i in range(1,number+1):
-        sum=sum+i
-    return sum**2"""
-    l = range(1, number + 1)
+    l = xrange(1, number + 1)
     return sum(l) ** 2
 
 sum_of_squre = sum_of_squares(100)
