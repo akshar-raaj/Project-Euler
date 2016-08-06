@@ -2,19 +2,22 @@
 #filename euler2.py
 
 
-def sum_fibonacci_upto_this(maxValue):
-    firstTerm = 1
-    secondTerm = 2
-    nextTerm = 0
-    sum = secondTerm
+
+def get_fibonacci_numbers(maxValue):
+    # 1, 2, 3, 5, 8
+    firstTerm, secondTerm, nextTerm = 1, 2, 0
+    yield firstTerm
+    yield secondTerm
     while True:
         nextTerm = firstTerm + secondTerm
-        if(nextTerm > maxValue):
+        firstTerm, secondTerm = secondTerm, nextTerm
+        if nextTerm > maxValue:
             break
-        if nextTerm % 2 == 0:
-            sum += nextTerm
-        firstTerm = secondTerm
-        secondTerm = nextTerm
-    print "Sum is %d" % sum
+        yield nextTerm
+
+def sum_fibonacci_upto_this(maxValue):
+    the_sum = sum(each for each in get_fibonacci_numbers(maxValue) if each%2 == 0)
+    print "Sum is %d" % the_sum
+
 if __name__ == "__main__":
     sum_fibonacci_upto_this(4000000)
