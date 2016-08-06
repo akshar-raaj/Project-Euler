@@ -5,26 +5,18 @@ def isPrime(number):
     return all(bool(number % i) for i in xrange(2, sqrtOfNumber + 1))
 
 def findLowestPrimeNumberBetween(lowerLimit,upperLimit):
-    i=lowerLimit
-    while(i<=upperLimit):
-        if(isPrime(i)):
-            return i
-        i=i+1
-    return upperLimit
+    return next((i for i in xrange(lowerLimit, upperLimit) if isPrime(i)), upperLimit)
 
 def factorize(number):
     quotient=number
     lowerLimitForPrimeFactor=2
-    primeFactorsList=[]
     while(quotient!=1):
         primeFactor=findLowestPrimeNumberBetween(lowerLimitForPrimeFactor,quotient)
         if(quotient%primeFactor==0):
             quotient=quotient/primeFactor
-            primeFactorsList.append(primeFactor)
-            #print primeFactor
         else:
             lowerLimitForPrimeFactor=lowerLimitForPrimeFactor+1
-    print ("Largest prime factor of {0} is {1}".format(number,primeFactorsList[len(primeFactorsList)-1]))       
+    print ("Largest prime factor of {0} is {1}".format(number,primeFactor))       
 
 factorize(600851475143)
 
